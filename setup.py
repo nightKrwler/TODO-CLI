@@ -1,21 +1,28 @@
-import setuptools
+import codecs
+import os
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+from setuptools import setup, find_packages
 
-setuptools.setup(
-    name="todo", # Replace with your own username
-    version="0.0.1",
-    author="Srujana",
-    author_email="batch.srujana@gmail.com",
-    description="Command Line Interface to manage todo lists",
+
+def read(*parts):
+    return codecs.open(os.path.join(os.path.abspath(os.path.dirname(__file__)), *parts), 'r').read()
+
+
+long_description = read('README.md')
+
+
+setup(
+    name='todo',
+    version='0.0.1',
+    description='Command-line tool to manage Todo lists',
     long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/nightKrwler/TODO-CLI",
-    packages=setuptools.find_packages(),    
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: Linux",
-    ],
-    python_requires='>=3.6',
+    author='Francois Chalifour',
+    author_email='batchu.srujana@gmail.com',
+    #url='https://github.com/nightKrwler/TODO-CLI',
+    packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            'todo=todo:init'
+        ]
+    }
 )

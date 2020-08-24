@@ -1,15 +1,11 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.0
 Name: todo
 Version: 0.0.1
-Summary: Command Line Interface to manage todo lists
-Home-page: https://github.com/nightKrwler/TODO-CLI
-Author: Srujana
-Author-email: batch.srujana@gmail.com
+Summary: Command-line tool to manage Todo lists
+Home-page: UNKNOWN
+Author: Francois Chalifour
+Author-email: batchu.srujana@gmail.com
 License: UNKNOWN
 Description: # TODO-CLI
         
 Platform: UNKNOWN
-Classifier: Programming Language :: Python :: 3
-Classifier: Operating System :: Linux
-Requires-Python: >=3.6
-Description-Content-Type: text/markdown
