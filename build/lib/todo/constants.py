@@ -1,1 +1,0 @@
-PROJECTFILE = "todo/todo.json"
