@@ -8,7 +8,7 @@ $ python3 <path to setup.py> install
 ```
 Now you will be able to use todo command
 
-Available Commands :
+## Available Commands :
 ```console
 
 $ todo init #Create a Project
