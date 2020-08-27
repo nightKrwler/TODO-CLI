@@ -1,6 +1,12 @@
 # TODO-CLI
 Command line tool to manage TO-DO Lists
 
+##Installation with pip
+
+```console
+$ pip install <path to the todo-cli folder>
+```
+
 Available Commands :
 ```console
 
@@ -22,4 +28,4 @@ $ todo delete #deletes the existing project
 
 ```
 
-all/a argument can be used for the commands check,uncheck,remove to apply the operation to all tasks
+* all/a argument can be used for the commands check,uncheck,remove to apply the operation to all tasks
