@@ -16,9 +16,9 @@ setup(
     version='0.0.1',
     description='Command-line tool to manage Todo lists',
     long_description=long_description,
-    author='Francois Chalifour',
+    author='Srujana B',
     author_email='batchu.srujana@gmail.com',
-    #url='https://github.com/nightKrwler/TODO-CLI',
+    url='https://github.com/nightKrwler/TODO-CLI',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
