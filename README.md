@@ -1,6 +1,11 @@
 # TODO-CLI
 Command line tool to manage TO-DO Lists
 
+### Create a project
+
+```console
+$ todo init
+```
 ## Installation with pip
 
 ```console
@@ -31,3 +36,4 @@ $ todo delete #deletes the existing project
 * all/a argument can be used instead of task-id for the commands <i>check,uncheck,remove</i> to apply the operation to all tasks
 
 * [Create a project](#create-a-project)
+
