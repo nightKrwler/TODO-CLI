@@ -12,7 +12,7 @@ class menuInterface:
         h, w = stdscr.getmaxyx()
         for idx, row in enumerate(list):
             char = ' ✓ ' if row["status"] else ' x '
-            text = '{id} {char} {task} {priority}'
+            text = '{id} {char} {task}'
             x = w//2 - len(text)//2
             y = h//2 - len(list)//2 + idx
             pair = 2
@@ -24,7 +24,6 @@ class menuInterface:
                     id=idx,
                     char = char,
                     task=row["task"],
-                    priority=row["priority"],
                 ))
                 stdscr.attroff(curses.color_pair(pair))
             else:
@@ -32,7 +31,6 @@ class menuInterface:
                     id=idx,
                     char = char,
                     task=row["task"],
-                    priority=row["priority"],
                 ))
         x = 0
         y = h//2 + len(list)//2 +1

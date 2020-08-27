@@ -1,13 +1,14 @@
 import sys
-from todo.commands import init, add
+import todo
+from todo.commands import *
 
-if __name__ == "__main__":
-    
+def main():
+   
     command = sys.argv[1]
-    print(command)
+    #print(command)
     if command == "init":
         init()
-    '''elif command == "add":
+    elif command == "add":
         add()
     elif command == "list":
         list()
@@ -18,4 +19,9 @@ if __name__ == "__main__":
     elif command == "uncheck":
         uncheck()
     elif command == "remove":
-        remove()'''
+        remove()
+    elif command =="delete":
+        delete()
+    else:
+        print("ERROR : Please check the command used")
+    return

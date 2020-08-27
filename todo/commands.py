@@ -35,6 +35,9 @@ def add():
 
     with open(PROJECTFILE, 'r') as openfile:
         todo_object = json.load(openfile)
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
     tasks = sys.argv[2]
     tasks_list = tasks.split(",")
     
@@ -51,6 +54,10 @@ def list():
     with open(PROJECTFILE, 'r') as openfile: 
         todo_object = json.load(openfile)
     
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
+    
     print('{blue}{name:^14}{reset}'.format(
         blue = Fore.BLUE,
         name = todo_object["name"],
@@ -58,7 +65,7 @@ def list():
 
     ))
     c =0 
-    if len(todo_object["todo"]==0):
+    if len(todo_object["todo"])==0:
         print("Woohooo! No tasks yet")
         return
     for i in todo_object["todo"]:
@@ -91,6 +98,9 @@ def list():
 def toggle():
     with open(PROJECTFILE, 'r') as openfile: 
         todo_object = json.load(openfile)
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
     tasks = todo_object["todo"]  
     mi = menuInterface(tasks)  
     todo_object["todo"] = curses.wrapper(mi.main)
@@ -101,9 +111,15 @@ def check():
     val = sys.argv[2]
     with open(PROJECTFILE, 'r') as openfile: 
         todo_object = json.load(openfile)
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
     if(check_int(val)):
         id = int(sys.argv[2])
-        todo_object["todo"][id]["status"] = True     
+        if id<len(todo_object["todo"]):
+            todo_object["todo"][id]["status"] = True
+        else:
+            print("ERROR :Index out of range")     
     elif(re.match(r'[aA]',val)):
         for id in range(len(todo_object["todo"])):
             todo_object["todo"][id]["status"] = True
@@ -118,9 +134,15 @@ def uncheck():
     val = sys.argv[2]
     with open(PROJECTFILE, 'r') as openfile: 
         todo_object = json.load(openfile)
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
     if(check_int(val)):
         id = int(sys.argv[2])
-        todo_object["todo"][id]["status"] = False     
+        if id<len(todo_object["todo"]):
+            todo_object["todo"][id]["status"] = False
+        else:
+            print("ERROR :Index out of range")    
     elif(re.match(r'[aA]',val)):
         for id in range(len(todo_object["todo"])):
             todo_object["todo"][id]["status"] = False
@@ -135,18 +157,25 @@ def remove():
     val = sys.argv[2]
     with open(PROJECTFILE, 'r') as openfile: 
         todo_object = json.load(openfile)
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
     if(check_int(val)):
         id = int(sys.argv[2])
         #print(id,len(todo_object["todo"]))
         if id>=len(todo_object["todo"]):
-            print("No Tasks left or Incorrect indices")
+            sys.exit("ERROR : No Tasks left or Incorrect indices")
         else:
             todo_object["todo"].pop(id)
             write(todo_object)
-        list()
+            list()
         return
     elif(re.match(r'[aA]',val)):
-        todo_object = {}
+        todo_object["todo"] =[]
+        write(todo_object)
+        list()
+    elif(val=="done"):
+        todo_object["todo"] = [i for i in todo_object["todo"] if not i["status"]]
         write(todo_object)
         list()
     else:
@@ -155,6 +184,9 @@ def remove():
 def delete():
     with open(PROJECTFILE, 'r') as openfile: 
         todo_object = json.load(openfile)
+    if len(todo_object)==0:
+        print("Create a Project to start with...")
+        return
     name = todo_object["name"]
     todo_object = {}
     write(todo_object)

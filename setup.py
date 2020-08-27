@@ -20,4 +20,10 @@ setup(
     author_email='batchu.srujana@gmail.com',
     #url='https://github.com/nightKrwler/TODO-CLI',
     packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            'todo=todo:main'
+        ]
+    }
+
 )
