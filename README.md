@@ -2,8 +2,10 @@
 Command line tool to manage TO-DO Lists
 
 Available Commands :
+```console
 
-todo init #Create a Project
+$ todo init #Create a Project
+```
 todo add "Task 1","Task 2" #add tasks
 todo list # list all the existing tasks
 todo toggle # Toggle tasks
