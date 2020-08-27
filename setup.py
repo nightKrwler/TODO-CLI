@@ -11,7 +11,7 @@ setup(
     long_description=read('README.md'),
     author='Srujana B',
     author_email='batchu.srujana@gmail.com',
-    url='https://github.com/nightKrwler/TODO-CLI',
+    url='https://github.com/nightKrwler/TODO-CLI', 
     packages=find_packages(),
     entry_points={
         'console_scripts': [
