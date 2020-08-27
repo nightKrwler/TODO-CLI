@@ -1,5 +1,5 @@
 import sys
-import todo
+
 from todo.commands import *
 
 def main():
