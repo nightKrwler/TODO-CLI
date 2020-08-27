@@ -1,11 +1,12 @@
 # TODO-CLI
 Command line tool to manage TO-DO Lists
 
-## Installation with pip
+## Installation 
 
 ```console
 $ python3 <path to setup.py> install
 ```
+Now you will be able to use todo command
 
 Available Commands :
 ```console
